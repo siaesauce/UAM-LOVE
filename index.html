@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <title>This is us.</title>
+    <link rel="shortcut icon" type="images/x-icon" href="https://0392-1300969605.cos.ap-beijing.myqcloud.com/ico.png" />
+    <link rel="stylesheet" href="https://0392-1300969605.cos.ap-beijing.myqcloud.com/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="header">
+            <div class="header-title">
+                <h1>UAM LOVE SPACE</h1>
+            </div>
+            <div class="header-content">
+                <p>我们生活中的废纸桶。</p>
+                <div class="nav">
+                    <a href="#">主页</a>
+                    <a href="#">相册</a>
+                    <a href="#">待办清单</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div id="boyfriend">
+                <div class="timenode" v-for="item in list_b">
+                    <div class="date">
+                        <p class="rate-time">{{item.date}}</p>
+                    </div>
+                    <div class="body">
+                        <p v-html="item.content"></p>
+                    </div>
+                </div>
+                <div class="btn">
+                    <a @click="one(1)" v-if="list_b.length < total_b">查看更多</a>
+                    <a v-if="list_b.length >= total_b">已经到底啦~</a>
+                </div>
+                <p class="tips">共计发送 {{total_b}} 条留言</p>
+            </div>
+            <div id="girlfriend">
+                <div class="timenode" v-for="item in list_g">
+                    <div class="date">
+                        <p class="rate-time">{{item.date}}</p>
+                    </div>
+                    <div class="body">
+                        <p v-html="item.content"></p>
+                    </div>
+                </div>
+                <div class="btn">
+                    <a @click="one(0)" v-if="list_g.length < total_g">查看更多</a>
+                    <a v-if="list_g.length >= total_g">已经到底啦~</a>
+                </div>
+                <p class="tips">共计发送 {{total_g}} 条留言</p>
+            </div>
+            <div class="borderb"></div>
+        </div>
+        <div class="footer">
+            <p>Copyright © 2022 . All rights reserved.</p>
+            <div class="days">
+                <span>💕我们已经在一起<span id="days">0</span>天了~</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://imgcache.qq.com/qcloud/cloudbase-js-sdk/1.4.0/cloudbase.full.js"></script>
+<script src="https://0392-1300969605.cos.ap-beijing.myqcloud.com/main.js"></script>
+
+</html>
